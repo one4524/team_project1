@@ -59,7 +59,7 @@
         android:layout_height="match_parent"
 
         android:gravity="center"
-        android:verticalSpacing="40dp"
+        android:verticalSpacing="25dp"
         android:horizontalSpacing="0dp"
         android:numColumns="7"
         android:rowCount="6"
