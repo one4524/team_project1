@@ -92,7 +92,7 @@ public class MonthViewActivity extends AppCompatActivity {
             days.add(String.valueOf(i));  //해당 월의 1일부터 마지막날까지 순서대로 넣음.
         for (int i = 0; i < end_empty_day; i++) days.add(" ");   // 모양 유지 공백
 
-        //날짜를 나타내는 그리드뷰의 어댑터//
+        //날짜를 나타내는 그리드뷰의 어댑터
         ArrayAdapter<String> adapt_cal
                 = new ArrayAdapter<String>(
                 this,
