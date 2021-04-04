@@ -46,24 +46,6 @@ public class MonthViewActivity extends AppCompatActivity {
         TextView yearMonthTV = findViewById(R.id.year_month);
         yearMonthTV.setText(year + "년 " + month + "월");
 
-        ///////////////////// 달력의 요일을 나타내는 그리드뷰 //////////////////////
-
-        String[] days_name = {"일", "월", "화", "수", "목", "금", "토"};   //요일 배열
-
-        //어댑터 준비 (배열 객체 이용, simple_list_item_1 리소스 사용
-        //요일를 나타내는 그리드뷰의 어댑터
-        ArrayAdapter<String> adapt_day
-                = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                days_name);
-
-        // id를 바탕으로 화면 레이아웃에 정의된 GridView 객체 로딩
-        GridView gridview_day = (GridView) findViewById(R.id.days_gridview);
-        // 어댑터를 GridView 객체에 연결
-        gridview_day.setAdapter(adapt_day);
-
-
         /////////////////// 달력의 날짜를 나타내는 그리드뷰 /////////////////////
 
         //먼저 6 x 7 크기의 매트릭스에 날짜를 표시

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MonthViewActivity"
     android:orientation="vertical">
 
@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         >
 
+        <!-- 이전 버튼 -->
         <Button
             android:id="@+id/previous"
             android:layout_width="wrap_content"
@@ -25,16 +26,21 @@
             />
 
 
+        <!-- 년, 월 표시 -->
         <TextView
             android:id="@+id/year_month"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/calendar_prev_button"
+            android:layout_toLeftOf="@+id/calendar_next_button"
+            android:gravity="center"
             android:layout_weight="1"
-            android:text=" 년 월"
+            android:text=" 00년 00월"
             android:textAlignment="center"
             />
 
+        <!-- 다음 버튼 -->
         <Button
             android:id = "@+id/next"
             android:layout_width="wrap_content"
@@ -43,27 +49,75 @@
             />
     </LinearLayout>
 
-    <GridView
-        android:id="@+id/days_gridview"
+    <!-- 요일 표시 -->
+    <LinearLayout
+        android:id="@+id/calendar_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="#00cc00"
-        android:gravity="center"
-        android:numColumns="7"
-        android:stretchMode="columnWidth"
-        />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="일"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="월"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="화"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="수"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="목"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="금"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#222222"
+            android:text="토"/>
+
+    </LinearLayout>
+
+    <!-- 날짜 표시 -->
     <GridView
         android:id="@+id/cal_girdview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:gravity="center"
+        android:layout_height ="500dp"
         android:verticalSpacing="25dp"
-        android:horizontalSpacing="0dp"
-        android:numColumns="7"
         android:rowCount="6"
-        android:stretchMode="columnWidth"
+        android:numColumns="7"
         />
 
 </LinearLayout>
